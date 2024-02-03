@@ -7,6 +7,9 @@
   width: 100vw;
   padding: 32px;
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .login-container {
@@ -45,8 +48,12 @@
 }
 
 .error-message {
-display: flex;
+  display: flex;
 }
 
-
+@media screen and (max-width: 1024px) {
+  .App {
+    background-size: cover;
+  }
+}
 

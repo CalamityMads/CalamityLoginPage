@@ -33,7 +33,7 @@ const LoginPage = (props: Props) => {
                 </GridColumn>
             </GridRow>
             <GridRow columns={12}>
-                <GridColumn width={6}>
+                <GridColumn width={6} mobile={12}>
                     <Form onSubmit={callLogin} error={!!response.error}>
                         <FormField >
                             <label>Email</label>
@@ -42,12 +42,17 @@ const LoginPage = (props: Props) => {
                                 placeholder="Email" 
                                 onChange={(e) => setEmail(e.target.value)} 
                                 icon={emailIsValid != undefined && !emailIsValid ? ErrorIcon : undefined} 
-                                error={emailIsValid != undefined && !emailIsValid} />
-                                fluid 
+                                error={emailIsValid != undefined && !emailIsValid} 
+                                fluid/>
                         </FormField>
                         <FormField>
                             <label>Password</label>
-                            <Input type='password' placeholder="Password" fluid onChange={(e) => setPassword(e.target.value)} />
+                            <Input 
+                            type='password' 
+                            placeholder="Password" 
+                            onChange={(e) => setPassword(e.target.value)} 
+                            fluid 
+                            />
                         </FormField>
                         <Button disabled={emailIsValid === false || password.length === 0} className="submit-btn" color="teal" type='submit' fluid>Submit</Button>
                         {response.error ?
